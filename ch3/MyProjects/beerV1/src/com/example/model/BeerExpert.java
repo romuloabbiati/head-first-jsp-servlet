@@ -3,8 +3,8 @@ import java.util.*;
 
 public class BeerExpert {
 
-	public List<String> getBrands(String colour) {
-		List<String> brands = new ArrayList<>();
+	public List getBrands(String colour) {
+		List brands = new ArrayList();
 		if(colour.equals("amber")) {
 			brands.add("Jack Amber");
 			brands.add("Red Moose");
