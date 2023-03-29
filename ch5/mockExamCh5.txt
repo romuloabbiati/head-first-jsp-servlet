@@ -1,0 +1,40 @@
+1: B-flush
+
+2: A-They should be used for data that changes rarely, 
+D-ServletContext.getInitParameter(String), F-They should be used for 
+data that is applicable to an entire web application
+
+3: A-HttpSession, B-ServletRequest, D-ServletContext
+
+4: B-getAttribute()
+
+5: D-ServletContext.getInitParameterNames(), 
+F-ServletContext.getInitParameter(String)
+
+6: B-An HttpSessionListener can be used to perform an action when an 
+HttpSession has timed out,
+C: A ServletContextListener can be used to perform an action when the servlet context is about to be shut down, 
+D-A ServletRequestAttributeListener can be used to perform an action when 
+an attribute has been removed from a ServletRequest
+
+7: D-An object representing a user who has just logged into the system
+
+8: B-A:a->b P:a->b M:a->c
+
+9: D-<listener-class>
+
+10: D-HttpServletRequest
+
+11: C-The container registers listeners based on declarations in the 
+deployment descriptor
+
+12: A-A RequestDispatcher can be used to forward a request to another 
+servlet, D-The servlet to which a request is forwarded may access the original query string by calling getQueryString() on the ServletRequest, 
+E-The servlet to which a request is forwarded may access the original query string by calling getAttribute("Javax.servlet.forward.query_string") on the ServletRequest.
+
+13: A-If the servlet implements Java.servlet.SingleThreadModel, the container may create one instance for each request,  
+D-If the servlet does not implement SingleThreadModel, the container 
+will create no more than one instace per JVM.
+
+14: D-Use local variables exclusively, and if you have to use instance 
+variables, synchronize access to them. 

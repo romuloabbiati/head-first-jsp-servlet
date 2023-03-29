@@ -1,0 +1,21 @@
+// servlet context listener example
+
+/*
+This is a class that is used to listen for the two key events in a 
+ServletContext's life - initialisation (creation) and destruction.
+This class needs to implements javax.servlet.ServletContextListener
+*/
+
+import javax.servlet.*;
+
+public class MyServletContextListener implements ServletContextListener {
+
+	public void contextInitialized(ServletContextEvent event) {
+		// code to initiliase the database connection
+		// and store it as a context attribute
+	}
+
+	public void contextDestroyed(ServletContextEvent event) {
+		// code to close the database connection
+	}
+}
