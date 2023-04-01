@@ -1,24 +1,39 @@
 getCreationTime()
-  - what it does: return when the session was created
-  - what you'd use it for: might want use this to calculate how long an 
-user has been logged
+  - what it does: returns the time the session was first created.
+  - what you'd use it for: to find out how old the session is. You might 
+want to restrict certain sessions to a fixed length of time. For example, 
+you might say, "Once you've logged in, you have exactly 10 minutes to 
+complete this form..."
 
 getLastAccessedTime()
-  - what it does: return the time when an user last accessed the 
-app/session
-  - what you'd use it for: to calculate how long the user has been away and 
-kill the session?
+  - what it does: Returns the last time the Container got a request with 
+this session ID (in milliseconds).
+  - what you'd use it for: To find out when a client last accessed this 
+session. you might use it to decide that if the client's been gone a long 
+time you'll send them an email asking if theey're coming back. Or maybe 
+you'll invalidate() the session.
 
 setMaxInactiveInterval()
-  - what it does: set the max inactive interval
-  - what you'd use it for: to kill the session and save some resources if 
-the user is not using it
+  - what it does: Specifies the maximum time, in seconds, that you want to 
+allow between client request for this session.
+  - what you'd use it for: To cause a session to be destroyed after a 
+certain amount of time has apassed without the client making any request 
+for this session. This is one way to reduce the amount of stale sessions 
+sitting in your server.
 
 getMaxInactiveInternal()
-  - what it does: get the max inactive interval
-  - what you'd use it for: only to know the max inactive internal for this 
-app/session
+  - what it does: Returns the maximum time, in seconds, that is allowed 
+between client requests for this session.
+  - what you'd use it for: To find out how long this session can be 
+inactive and still be alive. You could use this to judge how much more time 
+an inactive client has before the session will be invalidated.
 
 invalidate()
-  - what it does: invalidate an user session?
-  - what you'd use it for: to invalidate an user session?
+  - what it does: Ends the session. This includes unbinding all session 
+attributes currently stored in this session.
+  - what you'd use it for: To kill a session if the client has been 
+inactive or if you KNOW the session is over (for example, after the client 
+does a shopping check-out or logs). The sessino instance itself might be 
+recycled by the Container, but we don't care. Invalidate means the session 
+ID no longer exists, and the attributes are removed from the session 
+object.
