@@ -1,0 +1,24 @@
+getCreationTime()
+  - what it does: return when the session was created
+  - what you'd use it for: might want use this to calculate how long an 
+user has been logged
+
+getLastAccessedTime()
+  - what it does: return the time when an user last accessed the 
+app/session
+  - what you'd use it for: to calculate how long the user has been away and 
+kill the session?
+
+setMaxInactiveInterval()
+  - what it does: set the max inactive interval
+  - what you'd use it for: to kill the session and save some resources if 
+the user is not using it
+
+getMaxInactiveInternal()
+  - what it does: get the max inactive interval
+  - what you'd use it for: only to know the max inactive internal for this 
+app/session
+
+invalidate()
+  - what it does: invalidate an user session?
+  - what you'd use it for: to invalidate an user session?
